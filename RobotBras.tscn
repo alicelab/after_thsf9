@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://RobotBras.gd" type="Script" id=1]
+[ext_resource path="res://brasrobot/pied.png" type="Texture" id=2]
+[ext_resource path="res://BrasArea.gd" type="Script" id=3]
+[ext_resource path="res://brasrobot/bras.png" type="Texture" id=4]
+[ext_resource path="res://Bras.gd" type="Script" id=5]
+
+[node name="RobotBras" type="Area2D"]
+
+position = Vector2( 288.193, 167.919 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="BrasArea" type="Area2D" parent="." index="1"]
+
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 3 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Sprite" type="Sprite" parent="BrasArea" index="0"]
+
+position = Vector2( 15.7415, 3.34244 )
+rotation = -0.349066
+texture = ExtResource( 4 )
+offset = Vector2( -15.1034, -1.60488 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Bras" type="Area2D" parent="BrasArea/Sprite" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BrasArea/Sprite/Bras" index="0"]
+
+position = Vector2( -13.8009, -8.58008 )
+rotation = 0.349066
+build_mode = 0
+polygon = PoolVector2Array( -29.0009, 2.66977, -14.1183, -3.80092, -18.9713, 2.02271, -16.5448, 8.16985, -2.95636, 0.566788, -8.45642, -12.8599, -22.2066, -8.97748, -31.2656, -1.69795 )
+
+
