@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://robot.gd" type="Script" id=1]
+[ext_resource path="res://robot/r001.png" type="Texture" id=2]
+[ext_resource path="res://robot/r002.png" type="Texture" id=3]
+[ext_resource path="res://robot/r003.png" type="Texture" id=4]
+[ext_resource path="res://robot/r004.png" type="Texture" id=5]
+[ext_resource path="res://robot/r005.png" type="Texture" id=6]
+[ext_resource path="res://robot/r006.png" type="Texture" id=7]
+[ext_resource path="res://robot/r007.png" type="Texture" id=8]
+[ext_resource path="res://robot/r008.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.9976, 7.88628 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Run",
+"speed": 12.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[node name="robot" type="Area2D"]
+
+position = Vector2( 13.4646, 182.294 )
+scale = Vector2( 0.276115, 0.283511 )
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 2.50186, 3.88443 )
+scale = Vector2( 3.18822, 3.71752 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( 5.26331, -4.26591 )
+scale = Vector2( 3.60832, 3.37934 )
+frames = SubResource( 2 )
+animation = "Run"
+
+
