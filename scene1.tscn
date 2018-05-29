@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://MurBrique.tres" type="TileSet" id=1]
 [ext_resource path="res://backgrounds/whatyousee.png" type="Texture" id=2]
@@ -13,8 +13,31 @@
 [ext_resource path="res://robotgris/jambe.png" type="Texture" id=11]
 [ext_resource path="res://RobotBras.tscn" type="PackedScene" id=12]
 [ext_resource path="res://music/scene01AUG.ogg" type="AudioStream" id=13]
+[ext_resource path="res://robot-milieu.gd" type="Script" id=14]
+[ext_resource path="res://robot2/01.png" type="Texture" id=15]
+[ext_resource path="res://robot2/02.png" type="Texture" id=16]
+[ext_resource path="res://robot2/03.png" type="Texture" id=17]
+[ext_resource path="res://robot2/04.png" type="Texture" id=18]
+[ext_resource path="res://robot2/05.png" type="Texture" id=19]
+[ext_resource path="res://robot2/06.png" type="Texture" id=20]
+[ext_resource path="res://robot2/07.png" type="Texture" id=21]
+[ext_resource path="res://robot2/08.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -70,11 +93,8 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 262146, 2, 0, 262147, 10, 0, 262148, 2, 0, 262153, 6, 0, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0, 262160, 2, 0, 262161, 2, 0, 262162, 2, 0, 262163, 2, 0, 327683, 10, 0, 327689, 7, 0, 327699, 11, 0, 393219, 10, 0, 393225, 7, 0, 393232, 10, 0, 393235, 5, 0, 458755, 10, 0, 458761, 8, 0, 458768, 10, 0, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 524304, 10, 0, 589840, 10, 0, 655376, 10, 0, 720912, 10, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 851978, 1, 0 )
+tile_data = PoolIntArray( 65535, 1, 0, 20, 1, 0, 131071, 1, 0, 65556, 1, 0, 196607, 1, 0, 131092, 1, 0, 262143, 1, 0, 196628, 1, 0, 327679, 1, 0, 262146, 2, 0, 262147, 10, 0, 262148, 2, 0, 262153, 6, 0, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0, 262160, 2, 0, 262161, 2, 0, 262162, 2, 0, 262163, 2, 0, 262164, 1, 0, 393215, 1, 0, 327683, 10, 0, 327689, 7, 0, 327696, 10, 0, 327699, 11, 0, 327700, 1, 0, 458751, 1, 0, 393219, 10, 0, 393225, 7, 0, 393230, 2, 0, 393231, 2, 0, 393232, 10, 0, 393235, 5, 0, 393236, 1, 0, 524287, 1, 0, 458755, 10, 0, 458761, 8, 0, 458768, 10, 0, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 458772, 1, 0, 589823, 1, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 524304, 10, 0, 524308, 1, 0, 655359, 1, 0, 589840, 10, 0, 589844, 1, 0, 720895, 1, 0, 655376, 10, 0, 655380, 1, 0, 786431, 1, 0, 720912, 10, 0, 720916, 1, 0, 851967, 1, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 851978, 1, 0 )
 _sections_unfolded = [ "Cell", "Collision", "Occluder" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Player" parent="." index="4" instance=ExtResource( 5 )]
 
@@ -128,5 +148,27 @@ volume_db = 10.0
 autoplay = true
 mix_target = 0
 bus = "Master"
+
+[node name="robot-milieu" type="Area2D" parent="." index="12"]
+
+position = Vector2( 32, 113 )
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="AnimatedSprite" parent="robot-milieu" index="0"]
+
+frames = SubResource( 2 )
+animation = "Run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="robot-milieu" index="1"]
+
+shape = SubResource( 3 )
 
 

@@ -15,5 +15,5 @@ func _process(delta):
 
 #connecteur sur le sprite et sur l animation
 func _on_porte_animation_finished():
-	print ("ok porte ouverte")
+	#print ("ok porte ouverte")
 	passage = true
