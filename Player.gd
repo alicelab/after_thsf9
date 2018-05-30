@@ -29,9 +29,9 @@ var ordinateur_allume = false
 func _physics_process(delta):
 
 	motion.y += GRAVITY	
-	#print("position: ", position.x, " ", position.y)
+	print("position: ", position.x, " ", position.y)
 	if !ordinateur_allume:
-		if position.x > 299 and position.y > 103 and position.y < 104:
+		if position.x > 297 and position.y > 103 and position.y < 106:
 			ordinateur_allume = true
 			get_parent().get_node("TileMap2").set_cell(19,5,4)
 			get_parent().get_node("TileMap2").set_cell(9,7,-1)

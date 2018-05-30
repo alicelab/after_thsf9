@@ -25,6 +25,7 @@ func _physics_process(delta):
 	
 	for body in bodies:
 		if body.name == "Player":
+			#pass
 			get_tree().reload_current_scene()
 	
 	if position.x > 157 && position.x< 168:

@@ -9,12 +9,12 @@ func _physics_process(delta):
 	$Sprite.play("Run")
 	
 	if (position.x < 262 && flip == false):
-		position.x = position.x +0.7
+		position.x = position.x +0.5
 		#flip = true
 	else:
 		flip = true
 		$Sprite.flip_h = true
-		position.x = position.x -1
+		position.x = position.x -0.5
 	
 	if (position.x < 16  && flip == true):
 		flip = false
@@ -25,6 +25,7 @@ func _physics_process(delta):
 	
 	for body in bodies:
 		if body.name == "Player":
+			#pass
 			get_tree().reload_current_scene()
 #
 #	if position.x > 157 && position.x< 168:

@@ -34,13 +34,13 @@ animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "Run",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 6.32736, 8.73688 )
 
 [node name="World" type="Node" index="0"]
 
@@ -151,7 +151,7 @@ bus = "Master"
 
 [node name="robot-milieu" type="Area2D" parent="." index="12"]
 
-position = Vector2( 32, 113 )
+position = Vector2( 32, 114 )
 input_pickable = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -161,6 +161,9 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="AnimatedSprite" parent="robot-milieu" index="0"]
 
@@ -169,6 +172,8 @@ animation = "Run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="robot-milieu" index="1"]
 
+position = Vector2( 0, 2.12064 )
+scale = Vector2( 1, 1.16313 )
 shape = SubResource( 3 )
 
 

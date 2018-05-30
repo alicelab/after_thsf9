@@ -159,8 +159,7 @@ shape = SubResource( 2 )
 
 [node name="Ordi2" type="Sprite" parent="." index="5"]
 
-editor/display_folded = true
-position = Vector2( 104.909, 54.1237 )
+position = Vector2( 104.909, 55.0503 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -215,7 +214,6 @@ shape = SubResource( 2 )
 
 [node name="Bras1" type="Sprite" parent="." index="7"]
 
-editor/display_folded = true
 position = Vector2( 68.4013, 26.4076 )
 texture = ExtResource( 1 )
 centered = false
@@ -243,7 +241,6 @@ shape = SubResource( 2 )
 
 [node name="Bras2" type="Sprite" parent="." index="8"]
 
-editor/display_folded = true
 position = Vector2( 67.7411, 50.3946 )
 texture = ExtResource( 1 )
 centered = false
@@ -271,7 +268,6 @@ shape = SubResource( 2 )
 
 [node name="Bras3" type="Sprite" parent="." index="9"]
 
-editor/display_folded = true
 position = Vector2( 39.2121, 51.8576 )
 texture = ExtResource( 1 )
 centered = false
@@ -299,7 +295,6 @@ shape = SubResource( 2 )
 
 [node name="Bras4" type="Sprite" parent="." index="10"]
 
-editor/display_folded = true
 position = Vector2( 68.4726, 72.34 )
 texture = ExtResource( 1 )
 centered = false
